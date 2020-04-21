@@ -1,4 +1,5 @@
 import turtle
+import random
 
 class Circuito():
     corredores = []
@@ -29,7 +30,20 @@ class Circuito():
                         
             self.corredores.append(new_turtle)
  
-#funcion de carrera de tortugas 
+#funcion de carrera de tortugas
+    def competir(self):
+        ganador = False
+        
+        while not ganador:
+            for tortuga in self.corredores:
+              avance = random.randint(1,6)
+              tortuga.forward(avance)
+              if tortuga.position()[0] >= self.__finishline:
+                  ganador = True
+                  print('La tortuga de color {} ha ganado'.format()[0])
+          
+             
  
 if __name__=='__main__':
     circuito = Circuito(640, 480)
+    circuito.competir()
